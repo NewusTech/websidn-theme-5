@@ -98,53 +98,11 @@
                             <img src="{{ Storage::disk('s3')->url($blog->image) }}" alt="">
                             
                         </div>
-                        {{-- <div class="bd-top-text">
-                            <p>Around 40% of B2B marketers say email newsletters are one of the key features to their
-                                content marketing success. There are tons of statistics that prove just how profitable
-                                emails can be for your business. What the numbers don’t show is that there’s a lot of
-                                testing and tweaking that goes into the email’s design and layout that allows the sender
-                                to get massive rewards.</p>
-                            <p>What makes a successful email or email campaign? One of the major elements in the design
-                                and layout that draws people in and grows your click-through rate. Today, I’ll be
-                                showing you ten examples of winning email design and how to make your own.</p>
-                        </div> --}}
-                        {{-- <div class="bd-quote">
-                            <p>Bringing the reader towards each CTA with “Awareness, Consideration, and Action” as the
-                                main stages. Harry’s used a color block design to guide the reader through each step of
-                                the email. Color blocking helps to guide the reader through your copy, making it easy to
-                                read with a pleasing layout.</p>
-                        </div> --}}
+            
                         <div class="bd-desc">
                             <p>{{$blog->deskripsi}}</p>
                         </div>
                         
-                        {{-- <div class="bd-last-desc">
-                            <p>If they’re still in the awareness stages of getting to know the brand, then they’ll most
-                                likely keep reading more on what Tock has to offer. They’re using one email design to
-                                speak to two types of readers both in the first stage of their welcome email.You can
-                                also change an email design’s color based on new product, season or to match a marketing
-                                campaign’s new look and feel.</p>
-                            <p>Design: The email imitates a product marketing funnel system, bringing the reader towards
-                                each CTA with “Awareness, Consideration, and Action” as the main stages. Harry’s used a
-                                color block design to guide the reader through each step of the email. Color blocking
-                                helps to guide the reader through your copy, making it easy to read with a pleasing
-                                layout.</p>
-                        </div> --}}
-                        {{-- <div class="bd-tag-share">
-                            <div class="tags">
-                                <a href="#">Typography</a>
-                                <a href="#">Guides</a>
-                                <a href="#">Improving</a>
-                                <a href="#">Smartphone</a>
-                            </div>
-                            <div class="share">
-                                <span>Share</span>
-                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="youtube"><i class="fa fa-youtube-play"></i></a>
-                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div> --}}
                         
                     </div>
                 </div>
@@ -154,69 +112,52 @@
     </section>
     <!-- Blog Details Section End -->
 
+    <!-- Back to Top -->
+    @foreach ($contact as $kontak)
+        <a href="https://wa.me/{{ $kontak->whatsapp }}?text=Halo,%20saya%20tertarik%20dengan%20layanan%20Anda." class="whatsapp-sticky">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    @endforeach
+
     <!-- Footer Section Begin -->
     <footer class="footer-section">
-        <div class="container">
+        <div class="container px-4">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="fs-about">
                         <div class="fa-logo">
                             <a href="#">
-                                <img src="img/f-logo.png" alt="">
+                                @foreach ($logo as $logos)
+                                    @if ($logos->images)
+                                        <img src="{{ Storage::disk('s3')->url($logos->images->path) }}" class="img-fluid " alt="Image" style="height: 35px; width:250px; object-fit: cover; ">
+                                    @else
+                                        Gambar tidak tersedia
+                                    @endif
+                                @endforeach
                             </a>
                         </div>
-                        <p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                            et dolore magna aliqua.</p>
-                        <div class="fa-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                        </div>
+                        @foreach ($about as $abouts)
+                            <p>{{ $abouts->text }}</p>
+                        @endforeach    
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="fs-widget">
-                        <h5>Instagram</h5>
-                        <div class="fw-instagram">
-                            <img src="img/instagram/insta-1.jpg" alt="">
-                            <img src="img/instagram/insta-2.jpg" alt="">
-                            <img src="img/instagram/insta-3.jpg" alt="">
-                        </div>
-                    </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-6 ">
+                    @foreach ($contact as $kontak)
                     <div class="fs-widget">
-                        <h5>Quick links</h5>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">Services</a></li>
-                        </ul>
+                        <h5>Follow Us</h5>
+                        <p><a class="text-white" href="https://wa.me/{{ $kontak->whatsapp }}" target="Tes Aja"><i class="fab fa-whatsapp text-success me-2"></i> Whatsapp</a></p>
+                        <p><a class="text-white" href="{{ $kontak->instagram }}"><i class="fab fa-instagram text-success me-2"></i> Instagram</a></p>
+                        <p><a class="text-white" href="{{ $kontak->facebook }}"><i class="fab fa-facebook text-success me-2"></i> Facebook</a></p>
+                        <p><a class="text-white" href="{{ $kontak->youtube }}"><i class="fab fa-youtube text-success me-2"></i> Youtube</a></p>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="fs-widget">
-                        <h5>Subscribe</h5>
-                        <p>Imolor amet consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                        <div class="fw-subscribe">
-                            <form action="#">
-                                <input type="text" placeholder="Email">
-                                <button type="submit"><i class="fa fa-send"></i></button>
-                            </form>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="col-lg-12">
                     <div class="copyright-text">
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed By <a href="https://websidn.com" target="_blank">Websidn</a></p>
                     </div>
                 </div>
             </div>

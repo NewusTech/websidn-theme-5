@@ -41,7 +41,10 @@
             </div>
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-                    Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the
+                    Untuk menggunakan halaman Cards pada aplikasi Anda, navigasikan ke halaman yang menampilkan tombol Home
+                    dan Daftar Card. Di halaman ini, terdapat tabel yang menampilkan daftar card dengan kolom-kolom seperti
+                    ID, Kategori, Judul, Detail, Image, dan Actions. Tombol Home mengarahkan Anda kembali ke halaman utama
+                    atau dashboard, sementara tombol Daftar Card membawa Anda ke halaman dengan daftar card yang ada
                     <code>.show</code> class.
                 </div>
             </div>
@@ -49,7 +52,9 @@
     </div>
     <br>
     <div class="container-fluid bg-white p-2">
-        <a href="{{ route('card.create') }}" class="btn btn-primary"><i class="fas fa-fw fa-plus"></i>Tambah Card</a>
+        @if (Auth::user()->name == 'SuperAdmin')
+            <a href="{{ route('card.create') }}" class="btn btn-primary"><i class="fas fa-fw fa-plus"></i>Tambah Card</a>
+        @endif
     </div>
     <br>
     <div class="container-fluid bg-white">
@@ -81,7 +86,9 @@
                                         style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        @if (Auth::user()->name == 'SuperAdmin')
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        @endif
                                     </form>
                                 </div>
                             </td>

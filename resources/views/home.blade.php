@@ -37,7 +37,7 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
+    <!-- Navbar Section Begin -->
     <header class="header-section">
         <div class="container-fluid">
             <div class="row">
@@ -70,7 +70,7 @@
             </div>
         </div>
     </header>
-    <!-- Header End -->
+    <!-- Navbar End -->
 
     <!-- Carousel Section Begin -->
     <section class="hero-section">
@@ -92,6 +92,35 @@
     </section>
     <!-- Carousel Section End -->
 
+    
+    <!-- Services Section Begin -->
+    <section class="services-section spad bg-third">
+        <div class="container">
+            
+            <div class="col-lg-12 text-center">
+                <div class="section-title text-white">
+                    <h2>LAYANAN KAMI</h2>
+                    <p>Lihatlah Layanan Yang Kami Berikan Kepada Anda</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                @foreach ($service as $layanan)
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="services-item">
+                        <img src="{{ Storage::disk('s3')->url($layanan->image) }}" alt="">
+                        <h3>{{ $layanan->judul }}</h3>
+                        <p>{{ $layanan->detail }}</p>
+                        <a href="/layanan" class="primary-btn">Read More</a>
+                    </div>
+                </div>
+                @endforeach
+                
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+    
     <!-- About Section Begin -->
     <section class="about-section py-2">
         <div class="container-fluid">
@@ -133,89 +162,26 @@
         </div>
     </div>
 
-    <!-- Services Section Begin -->
-    <section class="services-section spad bg-third">
-        <div class="container">
-            
-            <div class="col-lg-12 text-center">
-                <div class="section-title text-white">
-                    <h2>LAYANAN KAMI</h2>
-                    <p>Lihatlah Layanan Yang Kami Berikan Kepada Anda</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                @foreach ($service as $layanan)
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="services-item">
-                        <img src="{{ Storage::disk('s3')->url($layanan->image) }}" alt="">
-                        <h3>{{ $layanan->judul }}</h3>
-                        <p>{{ $layanan->detail }}</p>
-                        <a href="/layanan" class="primary-btn">Read More</a>
-                    </div>
-                </div>
-                @endforeach
-                
-            </div>
-        </div>
-    </section>
-    <!-- Services Section End -->
 
-    <!-- Categories Section Begin -->
-    {{-- <section class="categories-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="section-title">
-                        <h2>Categories</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do<br /> eiusmod tempor
-                            incididunt ut labore et dolore.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="right-btn"><a href="#" class="primary-btn">VIew all</a></div>
-                </div>
-            </div>
-            <div class="categories-slider owl-carousel">
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="img/categories/cat-1.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Animal</h4>
-                        <span>120 pictures</span>
-                    </div>
-                </div>
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="img/categories/cat-2.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Natural</h4>
-                        <span>325 pictures</span>
-                    </div>
-                </div>
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="img/categories/cat-3.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Potrait</h4>
-                        <span>540 pictures</span>
-                    </div>
-                </div>
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="img/categories/cat-4.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Animal</h4>
-                        <span>120 pictures</span>
-                    </div>
-                </div>
-                <div class="cs-item">
-                    <div class="cs-pic set-bg" data-setbg="img/categories/cat-5.jpg"></div>
-                    <div class="cs-text">
-                        <h4>Animal</h4>
-                        <span>120 pictures</span>
+    
+
+    
+
+    <!-- Header Section Begin -->
+    @foreach ($header as $headers)
+    <div class="container-fluid py-5 mb-1" style="background: url('{{ Storage::disk('s3')->url($headers->images->path) }}') center center no-repeat; background-size: cover;">
+        <div class="container py-5 mb-1 ">
+            <div class="container py-5 mb-1 ">
+                <div class="container py-5 mb-1 ">
+                    <div class="container py-5 mb-1 ">
+            
                     </div>
                 </div>
             </div>
         </div>
-    </section> --}}
-    <!-- Categories Section End -->
+    </div>
+    @endforeach
+    
 
     <!-- Pricing Section Begin -->
     <section class="pricing-section py-3">
@@ -258,7 +224,7 @@
     <!-- Pricing Section End -->
 
     <!-- Gallery Section Begin -->
-    <section class="portfolio-section py-4 px-5">
+    <section class="portfolio-section py-4 justify-content-center">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -269,20 +235,20 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 p-0">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                @foreach ($gallery as $galeri)
+                <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="portfolio-filter">
-                        @foreach ($gallery as $galeri)
                         <div class="pf-item set-bg {{ $galeri->texts->heading }} " data-setbg="{{ Storage::disk('s3')->url($galeri->images->path) }}" style="border: 3px solid #070707;">
                             <a href="{{ Storage::disk('s3')->url($galeri->images->path) }}" class="pf-icon image-popup"><span class="icon_plus"></span></a>
                             <div class="pf-text">
                                 <h4>{{ $galeri->texts->heading }}</h4>
                             </div>
                         </div>
-                        @endforeach
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>

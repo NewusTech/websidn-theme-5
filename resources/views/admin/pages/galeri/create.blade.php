@@ -17,7 +17,8 @@
                 <select name="id_image" id="id_image" class="form-control" required>
                     <option value="" disabled selected>Pilih Gambar</option>
                     @foreach ($images as $image)
-                        <option value="{{ $image->id }}" data-path="{{ Storage::url($image->path) }}">{{ $image->path }}
+                        <option value="{{ $image->id }}" data-path="{{ Storage::disk('s3')->url($image->path) }}">
+                            {{ $image->path }}
                         </option>
                     @endforeach
                 </select>
