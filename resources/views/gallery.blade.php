@@ -38,10 +38,10 @@
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
+    <header class="header-section mx-auto justify-content-center " style="background-color: #036666">
+        <div class="container-fluid col-lg" >
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
                     <div class="logo">
                         <a href="/">
                             @foreach ($logo as $logos)
@@ -53,15 +53,15 @@
                             @endforeach
                         </a>
                     </div>
-                    <nav class="nav-menu mobile-menu">
+                    <nav class="nav-menu mobile-menu justify-content-center">
                         <ul>
-                            <li><a href="/">Beranda</a></li>
+                            <li ><a href="/">Beranda</a></li>
                             <li><a href="/layanan">Layanan</a></li>
-                            <li class="active"><a href="/galleri">Galeri</a></li>
+                            <li class="active text-white"><a href="/galleri">Galeri</a></li>
                             <li><a href="/portofolio">Portofolio</a></li>
                             <li><a href="/tentang-kami">Tentang Kami</a></li>
                             <li><a href="/artikel">Artikel</a></li>
-                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill">Hubungi Kami</a>
+                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill" style="background-color: #55828B">Hubungi Kami</a>
                         </ul> 
                     </nav>    
                     <div id="mobile-menu-wrap"></div>
@@ -72,13 +72,13 @@
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option py-4 ">
+    <div class="breadcrumb-option py-4 " style="background-color: #87BBA2">
         <div class="container ">
             <div class="row align-items-center justify-content-center text-center ">
                 <div class="col-lg-12 ">
                     <div class="bo-links" >
                         <a href="/" style="font-size:20px"><i class="fa fa-home"></i><b> Beranda</b></a>
-                        <span class="text-dark" style="font-size:20px">Galeri Kami</span>
+                        <span class="text-white" style="font-size:20px">Galeri Kami</span>
                     </div>
                 </div>
             </div>
@@ -87,12 +87,12 @@
     <!-- Breadcrumb End -->
 
     <!-- Gallery Section Begin -->
-    <div class="gallery-section py-4 px-5 bg-fourth">
+    <div class="portfolio-section py-4 justify-content-center " style="background-color: #3B6064">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title text-center">
-                        <h2>Gallery Kami</h2>
+                    <div class="section-title text-center mb-3">
+                        <h2 class="text-white">Gallery Kami</h2>
                     </div>
                     
                 </div>
@@ -113,12 +113,12 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 p-0">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-12 mx-auto">
                     <div class="portfolio-filter">
                         @foreach ($gallery as $galeri)
-                        <div class="pf-item set-bg {{ $galeri->texts->heading }} " data-setbg="{{ Storage::disk('s3')->url($galeri->images->path) }}" style="border: 3px solid #070707;">
+                        <div class="pf-item set-bg {{ $galeri->texts->heading }} " data-setbg="{{ Storage::disk('s3')->url($galeri->images->path) }}" style="border: 3px solid #ffffff;">
                             <a href="{{ Storage::disk('s3')->url($galeri->images->path) }}" class="pf-icon image-popup"><span class="icon_plus"></span></a>
                             <div class="pf-text">
                                 <h4>{{ $galeri->texts->heading }}</h4>
@@ -140,7 +140,7 @@
     @endforeach
 
     <!-- Footer Section Begin -->
-    <footer class="footer-section">
+    <footer class="footer-section" style="background-color: #364958">
         <div class="container px-4">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
@@ -176,7 +176,7 @@
                     @endforeach
                 </div>
                 <div class="col-lg-12">
-                    <div class="copyright-text">
+                    <div class="copyright-text text-white">
                         <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed By <a href="https://websidn.com" target="_blank">Websidn</a></p>
                     </div>
                 </div>

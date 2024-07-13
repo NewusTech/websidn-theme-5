@@ -38,13 +38,12 @@
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
+    <header class="header-section mx-auto justify-content-center " style="background-color: #036666">
+        <div class="container-fluid col-lg" >
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
                     <div class="logo">
                         <a href="/">
-                            
                             @foreach ($logo as $logos)
                                 @if ($logos->images)
                                     <img src="{{ Storage::disk('s3')->url($logos->images->path) }}" class="img-fluid " alt="Image" style="height: 35px; width:250px; object-fit: cover; ">
@@ -54,7 +53,7 @@
                             @endforeach
                         </a>
                     </div>
-                    <nav class="nav-menu mobile-menu">
+                    <nav class="nav-menu mobile-menu justify-content-center">
                         <ul>
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/layanan">Layanan</a></li>
@@ -62,7 +61,7 @@
                             <li><a href="/portofolio">Portofolio</a></li>
                             <li><a href="/tentang-kami">Tentang Kami</a></li>
                             <li><a href="/artikel">Artikel</a></li>
-                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill">Hubungi Kami</a>
+                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill" style="background-color: #55828B">Hubungi Kami</a>
                         </ul> 
                     </nav>    
                     <div id="mobile-menu-wrap"></div>
@@ -100,7 +99,7 @@
                         </div>
             
                         <div class="bd-desc">
-                            <p>{{$blog->deskripsi}}</p>
+                            <td>{!! $blog->deskripsi !!}</td>
                         </div>
                         
                         
@@ -120,7 +119,7 @@
     @endforeach
 
     <!-- Footer Section Begin -->
-    <footer class="footer-section">
+    <footer class="footer-section" style="background-color: #364958">
         <div class="container px-4">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
@@ -156,7 +155,7 @@
                     @endforeach
                 </div>
                 <div class="col-lg-12">
-                    <div class="copyright-text">
+                    <div class="copyright-text text-white">
                         <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed By <a href="https://websidn.com" target="_blank">Websidn</a></p>
                     </div>
                 </div>

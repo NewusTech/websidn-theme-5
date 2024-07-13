@@ -38,13 +38,12 @@
     </div>
 
     <!-- Navbar Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
+    <header class="header-section mx-auto justify-content-center " style="background-color: #036666">
+        <div class="container-fluid col-lg" >
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
                     <div class="logo">
                         <a href="/">
-                            
                             @foreach ($logo as $logos)
                                 @if ($logos->images)
                                     <img src="{{ Storage::disk('s3')->url($logos->images->path) }}" class="img-fluid " alt="Image" style="height: 35px; width:250px; object-fit: cover; ">
@@ -54,15 +53,15 @@
                             @endforeach
                         </a>
                     </div>
-                    <nav class="nav-menu mobile-menu">
+                    <nav class="nav-menu mobile-menu justify-content-center">
                         <ul>
-                            <li class="active"><a href="/">Beranda</a></li>
+                            <li class="active text-white"><a href="/">Beranda</a></li>
                             <li><a href="/layanan">Layanan</a></li>
                             <li><a href="/galleri">Galeri</a></li>
                             <li><a href="/portofolio">Portofolio</a></li>
                             <li><a href="/tentang-kami">Tentang Kami</a></li>
                             <li><a href="/artikel">Artikel</a></li>
-                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill">Hubungi Kami</a>
+                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill" style="background-color: #55828B">Hubungi Kami</a>
                         </ul> 
                     </nav>    
                     <div id="mobile-menu-wrap"></div>
@@ -94,7 +93,7 @@
 
     
     <!-- Services Section Begin -->
-    <section class="services-section spad bg-third">
+    <section class="services-section spad" style="background-color: #3B6064">
         <div class="container">
             
             <div class="col-lg-12 text-center">
@@ -106,12 +105,12 @@
             
             <div class="row">
                 @foreach ($service as $layanan)
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="services-item">
+                <div class="col-lg-4 col-md-6 col-sm-6" >
+                    <div class="services-item text-white " style="background-color: #67b99a; border: 1px solid #fdfdfd;">
                         <img src="{{ Storage::disk('s3')->url($layanan->image) }}" alt="">
-                        <h3>{{ $layanan->judul }}</h3>
+                        <h3 >{{ $layanan->judul }}</h3>
                         <p>{{ $layanan->detail }}</p>
-                        <a href="/layanan" class="primary-btn">Read More</a>
+                        <a href="/layanan" class="primary-btn" style="background-color: #036666">Read More</a>
                     </div>
                 </div>
                 @endforeach
@@ -122,8 +121,8 @@
     <!-- Services Section End -->
     
     <!-- About Section Begin -->
-    <section class="about-section py-2">
-        <div class="container-fluid">
+    <section class="about-section " >
+        <div class="container-fluid" >
             
             <div class="row">
                 @foreach ($about as $abouts)
@@ -133,15 +132,15 @@
                     </div>
                     
                 </div>
-                <div class="col-lg-7 p-0">
-                    <div class="about-text">
+                <div class="col-lg-7 p-0" >
+                    <div class="about-text text-white" style="background-color: #55828B">
                         <div class="section-title">
                             <h2>Tentang Kami</h2>
                             <h4 class="mb-3">{{ $abouts->judul }}</h4>
-                            <p style="font-size: 19px; color:#070707;">{{$abouts->text}}
+                            <p style="font-size: 19px;">{{$abouts->text}}
                             </p>
                             
-                            <a href="/layanan" class="primary-btn mt-3">Read More</a>
+                            <a href="/layanan" class="primary-btn mt-3" style="background-color: #036666">Read More</a>
                         </div>
                         
                     </div>
@@ -184,11 +183,11 @@
     
 
     <!-- Pricing Section Begin -->
-    <section class="pricing-section py-3">
+    <section class="pricing-section py-3" style="background-color: #3B6064">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <div class="section-title pricing-title">
+                    <div class="section-title pricing-title text-white">
                         <h2>Daftar Harga</h2>
                         <p>Kami Berikan Harga Terbaik Untuk Anda</p>
                     </div>
@@ -196,23 +195,23 @@
             </div>
             <div class="row">
                 @foreach ($price as $prices)
-                <div class="col-lg-3 col-md-6">
-                    <div class="pricing-item">
-                        <div class="pi-price">
-                            <h2>Paket</h2>
+                <div class="col-lg-3 col-md-6" >
+                    <div class="pricing-item" style="background-color: #67b99a">
+                        <div class="pi-price text-white" >
+                            <h2 class="text-white">Paket</h2>
                         </div>
-                        <div class="pi-title mt-1">
-                            <h3>{{ $prices->judul }}</h3>
+                        <div class="pi-title mt-1 text-white">
+                            <h3 class="text-white">{{ $prices->judul }}</h3>
                         </div>
-                        <div class="pi-text">
+                        <div class="pi-text ">
                             <ul>
-                                <li>{{ $prices->item1 }}</li>
-                                <li>{{ $prices->item2 }}</li>
-                                <li>{{ $prices->item3 }}</li>
-                                <li>{{ $prices->item4 }}</li>
-                                <li>{{ $prices->item5 }}</li>
+                                <li class="text-white">{{ $prices->item1 }}</li>
+                                <li class="text-white">{{ $prices->item2 }}</li>
+                                <li class="text-white">{{ $prices->item3 }}</li>
+                                <li class="text-white">{{ $prices->item4 }}</li>
+                                <li class="text-white">{{ $prices->item5 }}</li>
                             </ul>
-                            <a href="/layanan" class="primary-btn">See More</a>
+                            <a href="/layanan" class="primary-btn text-white" style="background-color: #036666">See More</a>
                         </div>
                     </div>
                 </div>
@@ -224,11 +223,11 @@
     <!-- Pricing Section End -->
 
     <!-- Gallery Section Begin -->
-    <section class="portfolio-section py-4 justify-content-center">
+    <section class="portfolio-section py-4 justify-content-center" style="background-color: #55828B">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title">
+                    <div class="section-title text-white">
                         <h2 class="mb-4">Gallery Kami</h2>
                     </div>
                     
@@ -240,7 +239,7 @@
                 @foreach ($gallery as $galeri)
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="portfolio-filter">
-                        <div class="pf-item set-bg {{ $galeri->texts->heading }} " data-setbg="{{ Storage::disk('s3')->url($galeri->images->path) }}" style="border: 3px solid #070707;">
+                        <div class="pf-item set-bg {{ $galeri->texts->heading }} " data-setbg="{{ Storage::disk('s3')->url($galeri->images->path) }}" style="border: 3px solid #ffffff;">
                             <a href="{{ Storage::disk('s3')->url($galeri->images->path) }}" class="pf-icon image-popup"><span class="icon_plus"></span></a>
                             <div class="pf-text">
                                 <h4>{{ $galeri->texts->heading }}</h4>
@@ -255,7 +254,7 @@
     <!-- Gallery Section End -->
 
     <!-- Team Section Begin -->
-    <section class="team-section bg-third py-2">
+    <section class="team-section bg-third py-2" style="background-color: #3B6064">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-6">
@@ -268,11 +267,11 @@
             <div class="row">
                 @foreach ($team as $tim)
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="team-item" style="border: 1px solid #070707;">
+                    <div class="team-item" style="border: 1px solid #070707; background-color:#67b99a">
                         <img src="{{ Storage::disk('s3')->url($tim->image) }}" alt="">
-                        <div class="ti-text">
-                            <h5>{{ $tim->judul }}</h5>
-                            <span>{{ $tim->detail }}</span>
+                        <div class="ti-text ">
+                            <h5 class="text-white">{{ $tim->judul }}</h5>
+                            <span class="text-white">{{ $tim->detail }}</span>
                         </div>
                     </div>
                 </div>
@@ -284,11 +283,11 @@
     <!-- Team Section End -->
 
     <!-- Testimoial Section Begin -->
-    <section class="testimonial-section py-2">
+    <section class="testimonial-section py-2" style="background-color: #67b99a">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title">
+                    <div class="section-title text-white">
                         <h2>Testimonial</h2>
                         <p>Apa Yang Klien Kami Katakan</p>
                     </div>
@@ -303,11 +302,11 @@
                                 <img src="{{ Storage::disk('s3')->url($review->image) }}" alt="">
                             </div>
                             <div class="ta-text">
-                                <h5>{{ $review->name }}</h5>
-                                <span>{{ $review->job }}</span>
+                                <h5 class="text-white">{{ $review->name }}</h5>
+                                <span class="text-white">{{ $review->job }}</span>
                             </div>
                         </div>
-                        <p>{{$review->description}}</p>
+                        <p class="text-white">{{$review->description}}</p>
                     </div>
                 </div>
                 @endforeach
@@ -331,7 +330,7 @@
     @endforeach
 
     <!-- Footer Section Begin -->
-    <footer class="footer-section">
+    <footer class="footer-section" style="background-color: #364958">
         <div class="container px-4">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
@@ -367,7 +366,7 @@
                     @endforeach
                 </div>
                 <div class="col-lg-12">
-                    <div class="copyright-text">
+                    <div class="copyright-text text-white">
                         <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed By <a href="https://websidn.com" target="_blank">Websidn</a></p>
                     </div>
                 </div>

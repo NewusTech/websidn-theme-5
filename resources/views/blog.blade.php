@@ -38,13 +38,12 @@
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
+    <header class="header-section mx-auto justify-content-center " style="background-color: #036666">
+        <div class="container-fluid col-lg" >
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
                     <div class="logo">
                         <a href="/">
-                            
                             @foreach ($logo as $logos)
                                 @if ($logos->images)
                                     <img src="{{ Storage::disk('s3')->url($logos->images->path) }}" class="img-fluid " alt="Image" style="height: 35px; width:250px; object-fit: cover; ">
@@ -54,15 +53,15 @@
                             @endforeach
                         </a>
                     </div>
-                    <nav class="nav-menu mobile-menu">
+                    <nav class="nav-menu mobile-menu justify-content-center">
                         <ul>
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/layanan">Layanan</a></li>
                             <li><a href="/galleri">Galeri</a></li>
                             <li><a href="/portofolio">Portofolio</a></li>
                             <li><a href="/tentang-kami">Tentang Kami</a></li>
-                            <li><a href="/artikel">Artikel</a></li>
-                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill">Hubungi Kami</a>
+                            <li class="active text-white"><a href="/artikel">Artikel</a></li>
+                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill" style="background-color: #55828B">Hubungi Kami</a>
                         </ul> 
                     </nav>    
                     <div id="mobile-menu-wrap"></div>
@@ -73,13 +72,13 @@
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option py-4 ">
+    <div class="breadcrumb-option py-4 " style="background-color: #87BBA2"
         <div class="container ">
             <div class="row align-items-center justify-content-center text-center ">
                 <div class="col-lg-12 ">
                     <div class="bo-links" >
                         <a href="/" style="font-size:20px"><i class="fa fa-home"></i><b> Beranda</b></a>
-                        <span class="text-dark" style="font-size:20px">Artikel Kami</span>
+                        <span class="text-white" style="font-size:20px">Artikel Kami</span>
                     </div>
                 </div>
             </div>
@@ -88,13 +87,13 @@
     <!-- Breadcrumb End -->
 
     <!-- Blog Section Begin -->
-    <section class="blog-section py-3 bg-fourth">
+    <section class="blog-section py-3 " style="background-color: #3B6064">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 text-center">
                     <div class="contact-text">
-                        <h3>Artikel</h3>
-                        <p>Ikuti Artikel Terbaru Kami</p>
+                        <h3 class="text-white">Artikel</h3>
+                        <p class="text-white">Ikuti Artikel Terbaru Kami</p>
                     </div>
                 </div>
             </div>
@@ -108,14 +107,14 @@
                         
                         <div class="bi-text">
                             <div class="label">{{ $artikel->kategoris->kategori }}</div>
-                            <h5><a href="/{{ $artikel->slug }}">{{ $artikel->judul }}</a>
+                            <h5 ><a class="text-white" href="/{{ $artikel->slug }}">{{ $artikel->judul }}</a>
                             </h5>
                             <ul>
-                                <li>by <span>{{ $artikel->nama_penulis }}</span></li>
-                                <li>{{ $artikel->date }}</li>
+                                <li class="text-white">By <span class="text-white">{{ $artikel->nama_penulis }}</span></li>
+                                <li class="text-white">{{ $artikel->date }}</li>
                                 
                             </ul>
-                            <p>{{ $artikel->deskripsi_singkat }} .....</p>
+                            <p class="text-white">{{ $artikel->deskripsi_singkat }} .....</p>
                         </div>
                     </div>
                     @endforeach

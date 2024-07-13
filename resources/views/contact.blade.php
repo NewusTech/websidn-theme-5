@@ -38,13 +38,12 @@
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
+    <header class="header-section mx-auto justify-content-center " style="background-color: #036666">
+        <div class="container-fluid col-lg" >
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
                     <div class="logo">
                         <a href="/">
-                            
                             @foreach ($logo as $logos)
                                 @if ($logos->images)
                                     <img src="{{ Storage::disk('s3')->url($logos->images->path) }}" class="img-fluid " alt="Image" style="height: 35px; width:250px; object-fit: cover; ">
@@ -54,15 +53,15 @@
                             @endforeach
                         </a>
                     </div>
-                    <nav class="nav-menu mobile-menu">
+                    <nav class="nav-menu mobile-menu justify-content-center">
                         <ul>
-                            <li><a href="/">Beranda</a></li>
+                            <li ><a href="/">Beranda</a></li>
                             <li><a href="/layanan">Layanan</a></li>
                             <li><a href="/galleri">Galeri</a></li>
                             <li><a href="/portofolio">Portofolio</a></li>
                             <li><a href="/tentang-kami">Tentang Kami</a></li>
                             <li><a href="/artikel">Artikel</a></li>
-                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill">Hubungi Kami</a>
+                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill" style="background-color: #55828B">Hubungi Kami</a>
                         </ul> 
                     </nav>    
                     <div id="mobile-menu-wrap"></div>
@@ -73,13 +72,13 @@
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option py-4 ">
+    <div class="breadcrumb-option py-4 " style="background-color: #87BBA2"
         <div class="container ">
             <div class="row align-items-center justify-content-center text-center ">
                 <div class="col-lg-12 ">
                     <div class="bo-links" >
                         <a href="/" style="font-size:20px"><i class="fa fa-home"></i><b> Beranda</b></a>
-                        <span class="text-dark" style="font-size:20px">Kontak Kami</span>
+                        <span class="text-white" style="font-size:20px">Kontak Kami</span>
                     </div>
                 </div>
             </div>
@@ -88,30 +87,30 @@
     <!-- Breadcrumb End -->
 
     <!-- Contact Section Begin -->
-    <section class="contact-section py-4 bg-fourth">
+    <section class="contact-section py-4 " style="background-color: #3B6064">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 text-center">
+                <div class="col-lg-12 col-md-12 text-center" >
                     <div class="contact-text">
-                        <h3>Hubungi Kami</h3>
-                        <p>Jika ada pertanyaan atau butuh informasi lebih lanjut mengenai layanan kami, jangan ragu menghubungi kami melalui kontak, email, atau telepon. Tim kami siap membantu dan memberikan solusi terbaik. Terima kasih atas kepercayaan Anda!</p>
+                        <h3 class="text-white">Hubungi Kami</h3>
+                        <p class="text-white">Jika ada pertanyaan atau butuh informasi lebih lanjut mengenai layanan kami, jangan ragu menghubungi kami melalui kontak, email, atau telepon. Tim kami siap membantu dan memberikan solusi terbaik. Terima kasih atas kepercayaan Anda!</p>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-between px-5 mx-5 text-center">
                 @foreach ($contact as $kontak)
                 <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="card" >
+                    <div class="card" style="background-color: #67b99a; border: 3px solid #fdfdfd;">
                         <a href="#">
                         <img src="img/telepon.png" class="img-fluid my-2" height="100px" width="100px">
                         <div class="card-body text-center">
-                            <h4 class="card-title">Telepon</h4>
+                            <h4 class="card-title ">Telepon</h4>
                             <p class="text-dark">{{ $kontak->whatsapp }} </p>
                           </div></a>
                     </div>
                 </div> 
                 <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="card" > 
+                    <div class="card" style="background-color: #67b99a; border: 3px solid #fdfdfd;"> 
                         <a href="https://wa.me/{{ $kontak->whatsapp }}">
                         <img src="img/whatsapp.png" class="img-fluid my-2" height="100px" width="100px">
                         <div class="card-body text-center">
@@ -121,7 +120,7 @@
                     </div>
                 </div> 
                 <div class="col-lg-4 col-md-6 mb-2" >
-                    <div class="card">
+                    <div class="card" style="background-color: #67b99a; border: 3px solid #fdfdfd;">
                         <a href="{{ $kontak->instagram }}">
                         <img src="img/instagram.png" class="img-fluid my-2" height="100px" width="100px" >
                         <div class="card-body text-center">
@@ -131,7 +130,7 @@
                     </div>
                 </div> 
                 <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="card" >
+                    <div class="card" style="background-color: #67b99a; border: 3px solid #fdfdfd;">
                         <a href="{{ $kontak->facebook }}">
                         <img src="img/facebook.png" class="img-fluid my-2" height="100px" width="100px">
                         <div class="card-body text-center">
@@ -141,7 +140,7 @@
                     </div>
                 </div> 
                 <div class="col-lg-4 col-md-6 mb-2">
-                    <div class="card" >
+                    <div class="card" style="background-color: #67b99a; border: 3px solid #fdfdfd;">
                         <a href="{{ $kontak->youtube }}">
                         <img src="img/youtube.png" class="img-fluid my-2" height="100px" width="100px">
                         <div class="card-body text-center">
@@ -151,7 +150,7 @@
                     </div>
                 </div> 
                 <div class="col-lg-4 col-md-6 mb-2" >
-                    <div class="card">
+                    <div class="card" style="background-color: #67b99a; border: 3px solid #fdfdfd;">
                         <a href="{{ $kontak->tiktok }}">
                         <img src="img/tiktok.png" class="img-fluid my-2" height="100px" width="100px" >
                         <div class="card-body text-center">
@@ -181,7 +180,7 @@
     @endforeach
 
     <!-- Footer Section Begin -->
-    <footer class="footer-section">
+    <footer class="footer-section" style="background-color: #364958">
         <div class="container px-4">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
@@ -217,7 +216,7 @@
                     @endforeach
                 </div>
                 <div class="col-lg-12">
-                    <div class="copyright-text">
+                    <div class="copyright-text text-white">
                         <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed By <a href="https://websidn.com" target="_blank">Websidn</a></p>
                     </div>
                 </div>

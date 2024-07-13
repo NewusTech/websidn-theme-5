@@ -367,7 +367,7 @@ ol {
 	font-size: 16px;
 	font-weight: 700;
 	text-transform: uppercase;
-	color: #111111;
+	color: #ffffff;
 	display: block;
 	padding: 32px 8px 30px;
 	position: relative;
@@ -380,7 +380,7 @@ ol {
 	bottom: 0;
 	height: 3px;
 	width: 100%;
-	background: #009603;
+	background: #87BBA2;
 	content: "";
 	opacity: 0;
 	-webkit-transition: all 0.3s;
@@ -392,7 +392,7 @@ ol {
 	position: absolute;
 	left: 0;
 	top: 105px;
-	background: #111111;
+	background: #364958;
 	width: 180px;
 	z-index: 99;
 	opacity: 0;
@@ -545,8 +545,8 @@ ol {
 	text-align: center;
 	padding: 10px 10px 18px 10px;
 	background: #ffffff;
-	-webkit-box-shadow: 0px 10px 25px rgba(206, 206, 206, 0.5);
-	box-shadow: 0px 10px 25px rgba(206, 206, 206, 0.5);
+	/* -webkit-box-shadow: 0px 10px 25px rgba(206, 206, 206, 0.5); */
+	/* box-shadow: 0px 10px 25px rgba(206, 206, 206, 0.5); */
 	margin-bottom: 30px;
 }
 
@@ -660,8 +660,8 @@ ol {
 }
 
 .filter-controls ul li {
-	font-size: 17px;
-	color: #888888;
+	font-size: 18px;
+	color: #ffffff;
 	display: inline-block;
 	list-style: none;
 	margin-right: 60px;
@@ -690,7 +690,7 @@ ol {
 }
 
 .portfolio-filter .pf-item {
-	width: 380px; /* Lebar kotak */
+	width: 360px; /* Lebar kotak */
     height: 280px; /* Tinggi kotak */
 	float: left;
 	margin-right: 20px;
@@ -1001,7 +1001,7 @@ ol {
 	width: 100px;
 	line-height: 100px;
 	text-align: center;
-	background: #009603;
+	background: #036666;
 	font-size: 30px;
 	color: #ffffff;
 	display: inline-block;
@@ -1255,12 +1255,12 @@ ol {
 	position: absolute;
 	left: 0;
 	top: -12px;
-	background-image: url(../img/testimonial/quote.png);
+	/* background-image: url(../img/testimonial/quote.png); */
 	background-repeat: no-repeat;
 	content: "";
 	height: 26px;
 	width: 26px;
-	background-color: #ffffff;
+	/* background-color: #ffffff; */
 }
 
 .testimonial-item .ti-author {
@@ -1365,8 +1365,8 @@ ol {
 	z-index: 1;
 	text-align: center;
 	padding-bottom: 20px;
-	-webkit-box-shadow: 0px 0px 25px rgba(206, 206, 206, 0.5);
-	box-shadow: 0px 0px 25px rgba(206, 206, 206, 0.5);
+	/* -webkit-box-shadow: 0px 0px 25px rgba(206, 206, 206, 0.5);
+	box-shadow: 0px 0px 25px rgba(206, 206, 206, 0.5); */
 	margin-bottom: 20px;
 }
 
@@ -1376,7 +1376,7 @@ ol {
 	top: -73px;
 	height: 73px;
 	width: 150px;
-	background: #ffffff;
+	background: #67b99a;
 	content: "";
 	border-top-left-radius: 75px;
 	border-top-right-radius: 75px;
@@ -1392,7 +1392,7 @@ ol {
 }
 
 .pricing-item:hover:after {
-	background: #009603;
+	background: #036666;
 }
 
 .pricing-item:hover .pi-price h2 {
@@ -1404,7 +1404,7 @@ ol {
 }
 
 .pricing-item:hover .pi-title {
-	background: #009603;
+	background: #036666;
 }
 
 .pricing-item:hover .pi-title h3 {
@@ -1479,7 +1479,7 @@ ol {
 .pricing-item .pi-text .primary-btn {
 	font-size: 15px;
 	color: #111111;
-	background: #ebebeb;
+	background: #67b99a;
 	padding: 14px 0;
 	display: block;
 	-webkit-transition: all 0.3s;
@@ -2566,10 +2566,10 @@ ol {
 		padding-left: 100px;
 		padding-right: 110px;
 	}
-	.header-section {
+	/* .header-section {
 		padding-left: 85px;
 		padding-right: 85px;
-	}
+	} */
 }
 
 @media only screen and (min-width: 1200px) {
@@ -2694,6 +2694,7 @@ ol {
 	}
 	.header-section .container-fluid {
 		position: relative;
+		
 	}
 	.top-search {
 		float: none;
@@ -2999,3 +3000,4 @@ ol {
 		line-height: normal;
 	}
 }
+

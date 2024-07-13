@@ -38,13 +38,12 @@
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
+    <header class="header-section mx-auto justify-content-center " style="background-color: #036666">
+        <div class="container-fluid col-lg" >
+            <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
                     <div class="logo">
                         <a href="/">
-                            
                             @foreach ($logo as $logos)
                                 @if ($logos->images)
                                     <img src="{{ Storage::disk('s3')->url($logos->images->path) }}" class="img-fluid " alt="Image" style="height: 35px; width:250px; object-fit: cover; ">
@@ -54,15 +53,15 @@
                             @endforeach
                         </a>
                     </div>
-                    <nav class="nav-menu mobile-menu">
+                    <nav class="nav-menu mobile-menu justify-content-center">
                         <ul>
                             <li><a href="/">Beranda</a></li>
                             <li><a href="/layanan">Layanan</a></li>
                             <li><a href="/galleri">Galeri</a></li>
                             <li><a href="/portofolio">Portofolio</a></li>
-                            <li class="active"><a href="/tentang-kami">Tentang Kami</a></li>
+                            <li class="active text-white"><a href="/tentang-kami">Tentang Kami</a></li>
                             <li><a href="/artikel">Artikel</a></li>
-                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill">Hubungi Kami</a>
+                            <a href="/kontak-kami" class="primary-btn d-xl-inline-block rounded-pill" style="background-color: #55828B">Hubungi Kami</a>
                         </ul> 
                     </nav>    
                     <div id="mobile-menu-wrap"></div>
@@ -73,13 +72,13 @@
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option py-4 ">
+    <div class="breadcrumb-option py-4 " style="background-color: #87BBA2"
         <div class="container ">
             <div class="row align-items-center justify-content-center text-center ">
                 <div class="col-lg-12 ">
                     <div class="bo-links" >
                         <a href="/" style="font-size:20px"><i class="fa fa-home"></i><b> Beranda</b></a>
-                        <span class="text-dark" style="font-size:20px">Tentang Kami</span>
+                        <span class="text-white" style="font-size:20px">Tentang Kami</span>
                     </div>
                 </div>
             </div>
@@ -88,7 +87,7 @@
     <!-- Breadcrumb End -->
 
     <!-- About Section Begin -->
-    <section class="about-section py-2">
+    <section class="about-section">
         <div class="container-fluid">
             
             <div class="row">
@@ -99,15 +98,15 @@
                     </div>
                     
                 </div>
-                <div class="col-lg-7 p-0">
-                    <div class="about-text">
-                        <div class="section-title">
+                <div class="col-lg-7 p-0" >
+                    <div class="about-text"style="background-color: #3B6064">
+                        <div class="section-title text-white" >
                             <h2>Tentang Kami</h2>
                             <h4 class="mb-3">{{ $abouts->judul }}</h4>
-                            <p style="font-size: 19px; color:#070707;">{{$abouts->text}}
+                            <p style="font-size: 19px; color:#ffffff;">{{$abouts->text}}
                             </p>
                             
-                            <a href="/layanan" class="primary-btn mt-3">Read More</a>
+                            
                         </div>
                         
                     </div>
@@ -136,7 +135,7 @@
     @endforeach
 
     <!-- Footer Section Begin -->
-    <footer class="footer-section">
+    <footer class="footer-section" style="background-color: #364958">
         <div class="container px-4">
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
@@ -172,7 +171,7 @@
                     @endforeach
                 </div>
                 <div class="col-lg-12">
-                    <div class="copyright-text">
+                    <div class="copyright-text text-white">
                         <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Designed By <a href="https://websidn.com" target="_blank">Websidn</a></p>
                     </div>
                 </div>
